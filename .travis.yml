@@ -4,6 +4,12 @@ android:
   components:
     - build-tools-28.0.3
     - android-28
+    - sys-img-x86-android-28
+    - sys-img-armeabi-v7a-android-17
+  licenses:
+      - 'android-sdk-preview-license-52d11cd2'
+      - 'android-sdk-license-.+'
+      - 'google-gdk-license-.+'
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -16,10 +22,14 @@ cache:
     - $HOME/.android/build-cache
 
 before_script:
-- chmod +x gradlew
+  - chmod +x gradlew
+  - echo no | android create avd --force -n test -t android-28 --abi armeabi-v7a
+  - emulator -avd test -no-audio -no-window &
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
 
 script:
 - ./gradlew build
 
 after_success:
-- ./gradlew test cobertura coveralls
+- ./gradlew test connectedCheck jacocoTestReport coveralls
