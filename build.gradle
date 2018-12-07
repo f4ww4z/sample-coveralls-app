@@ -28,3 +28,7 @@ allprojects {
         jcenter()
     }
 }
+
+coveralls {
+    sourceDirs += ['src/main/kotlin']
+}

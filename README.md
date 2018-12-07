@@ -1,3 +1,3 @@
-[![Build Status](https://travis-ci.org/f4ww4z/sample-coveralls-app.svg?branch=master)](https://travis-ci.org/f4ww4z/sample-coveralls-app)
+[![Build Status](https://travis-ci.org/f4ww4z/sample-coveralls-app.svg?branch=master)](https://travis-ci.org/f4ww4z/sample-coveralls-app) [![Coverage Status](https://coveralls.io/repos/github/f4ww4z/sample-coveralls-app/badge.svg?branch=master)](https://coveralls.io/github/f4ww4z/sample-coveralls-app?branch=master)
 
 A sample app using the [coveralls-gradle-plugin](https://github.com/kt3k/coveralls-gradle-plugin).
